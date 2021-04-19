@@ -1,0 +1,35 @@
+<div class="w3-container w3-padding-32">
+  <div class="w3-modal-content" style="max-width:600px">
+    <div class="w3-center">
+      <img src="https://rtn.rw/wp-content/uploads/2019/07/rtn_simple_small.png">
+      <h2>Welcome to RTN</h2>
+    </div>
+    {{#if data.VILLAGE}}
+    <div class="w3-panel w3-pale-green">
+      <p>The form was submitted successfully!</p>
+    </div>
+    {{else}}
+    <div class="w3-panel w3-pale-yellow">
+      <p>WARNING: The submitted data is incomplete!</p>
+    </div>
+    {{/if}}
+    <p>
+      <b>Province: </b> {{data.PROVINCE}}
+    </p>
+    <p>
+      <b>District: </b> {{data.DISTRICT}}
+    </p>
+    <p>
+      <b>Sector: </b> {{data.SECTOR}}
+    </p>
+    <p>
+      <b>Cell: </b> {{data.CELL}}
+    </p>
+    <p>
+      <b>Village: </b> {{data.VILLAGE}}
+    </p>
+    <p>
+      <a href="/">back to form</a>
+    </p>
+  </div>
+</div>

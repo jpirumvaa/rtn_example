@@ -1,0 +1,26 @@
+<div class="w3-container w3-padding-32">
+  <div class="w3-modal-content" style="max-width:600px">
+    <div class="w3-center">
+      <img src="https://rtn.rw/wp-content/uploads/2019/07/rtn_simple_small.png">
+      <h2>Welcome to RTN</h2>
+    </div>
+    <form class="w3-container" action="/submit" method="post">
+      <p><label>Province</label>
+      <select id="PROVINCE" name="PROVINCE" class="w3-select" onchange="rtnExample.handleChange (event)">
+        <option value="">please select</option>
+        {{#each provinces}}
+        <option value="{{.}}">{{.}}</option>
+        {{/each}}
+      </select>
+      <p><label>District</label>
+      <select id="DISTRICT" name="DISTRICT" class="w3-select" onchange="rtnExample.handleChange (event)" disabled></select>
+      <p><label>Sector</label>
+      <select id="SECTOR" name="SECTOR" class="w3-select" onchange="rtnExample.handleChange (event)" disabled></select>
+      <p><label>Cell</label>
+      <select id="CELL" name="CELL" class="w3-select" onchange="rtnExample.handleChange (event)" disabled></select>
+      <p><label>Village</label>
+      <select id="VILLAGE" name="VILLAGE" class="w3-select" disabled></select>
+      <p><button type="submit" class="w3-green w3-button">submit</button>
+    </form>
+  </div>
+</div>
