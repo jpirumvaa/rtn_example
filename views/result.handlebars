@@ -8,11 +8,6 @@
     <div class="w3-panel w3-pale-green">
       <p>The form was submitted successfully!</p>
     </div>
-    {{else}}
-    <div class="w3-panel w3-pale-yellow">
-      <p>WARNING: The submitted data is incomplete!</p>
-    </div>
-    {{/if}}
     <p>
       <b>Province: </b> {{data.PROVINCE}}
     </p>
@@ -28,6 +23,12 @@
     <p>
       <b>Village: </b> {{data.VILLAGE}}
     </p>
+    
+    {{else}}
+    <div class="w3-panel w3-pale-yellow">
+      <p>WARNING: The submitted data is incomplete!</p>
+    </div>
+    {{/if}}
     <p>
       <a href="/">back to form</a>
     </p>

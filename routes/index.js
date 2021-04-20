@@ -1,12 +1,13 @@
 var express = require ('express');
 var router = express.Router();
 var regionController = require ('../controllers/regionController')
+var checkCompleteData= require('../middleware/validation')
 
 /*
  * Serve the input form, including data for the first layer (province).
  */
 router.get ('/', (req, res) => {
-  regionController.getRegionData (0, data => {
+  regionController.getRegionData (0,[], data => {
     res.render ('form', {provinces: data});
   });
 });
@@ -26,7 +27,7 @@ router.post ('/regions', (req, res) => {
 /*
  * Submit the form: display all submitted data in the result view.
  */
-router.post ('/submit', (req, res) => {
+router.post ('/submit', checkCompleteData, (req, res) => {
   res.render ('result', {data: req.body});
 });
 
