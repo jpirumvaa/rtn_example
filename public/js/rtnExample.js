@@ -11,7 +11,7 @@ rtnExample.handleChange = event => {
   var target = event.target.id,
       value = event.target.value,
       index = rtnExample.selects.indexOf (target),
-      next = rtnExample.selects[index + 1];
+      next = rtnExample.selects[index + 1],
       after = rtnExample.selects[index + 2];
   if (value)
     rtnExample.requestRegionData (index + 1, rtnExample.getValues(), data => {
@@ -26,7 +26,7 @@ rtnExample.handleChange = event => {
  * Return an array of all current values.
  */
 rtnExample.getValues = () => {
-  return rtnExample.selects.map (select => document.getElementById (sleect).value);
+  return rtnExample.selects.map (select => document.getElementById (select).value);
 };
 
 /*

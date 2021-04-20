@@ -1,4 +1,4 @@
-var data = require ('./data');
+var data = require('./data');
 var regionModel = module.exports;
 
 /*
@@ -7,11 +7,13 @@ var regionModel = module.exports;
  */
 regionModel.getRegionData = (layer, params, callback) => {
   var i = 0, d = data.regions;
-  while (i < layer){
-    var selection = d.filter (x => x.name === params[i])[0];
+  console.log("aaaaaaaaaaaaaa", d)
+  while (i < layer) {
+    var selection = d.filter(x => x.name === params[i])[0];
     if (selection && selection.children) d = selection.children;
-    else return callback (['']);
+    else return callback(['']);
     i++;
   }
-  callback (d.map (x => x.name));
+  console.log("bbbbbbbb", d);
+  if (callback) callback(d.map(x => x.name));
 };
