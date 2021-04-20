@@ -13,5 +13,7 @@ regionModel.getRegionData = (layer, params, callback) => {
     else return callback (['']);
     i++;
   }
-  callback (d.map (x => x.name));
+ callback (d.map (x => x.name));
+  
 };
+
