@@ -31,7 +31,7 @@ router.post ('/submit', (req, res) => {
  if(objectLength !=5){
    console.log('not complete')
    //req.session.error = 'data not complete';
-   res.redirect('/')
+   res.redirect('/?error=' + encodeURIComponent('incomplete data'));
  }
   res.render ('result', {data: req.body});
 });

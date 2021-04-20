@@ -26,7 +26,7 @@ rtnExample.handleChange = event => {
  * Return an array of all current values.
  */
 rtnExample.getValues = () => {
-  return rtnExample.selects.map (select => document.getElementById (sleect).value);
+  return rtnExample.selects.map (select => document.getElementById (select).value);
 };
 
 /*

@@ -4,6 +4,19 @@
       <img src="https://rtn.rw/wp-content/uploads/2019/07/rtn_simple_small.png">
       <h2>Welcome to RTN</h2>
     </div>
+  <div class="alert" id="loginAlert" style=" padding: 20px;
+  background-color: #f44336;
+  color: white;">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';" style=" margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;">&times;</span> 
+  <strong>Opps!</strong> All field are required please fill them all
+</div>
     <form class="w3-container" action="/submit" method="post">
       <p><label>Province</label>
       <select id="PROVINCE" name="PROVINCE" class="w3-select" onchange="rtnExample.handleChange (event)">
@@ -24,6 +37,12 @@
     </form>
   </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-  
+    $('#loginAlert').hide();
+    const urlParams = new URLSearchParams(window.location.search);
+    const myParam = urlParams.get('error');
+    if(myParam == "incomplete data") {
+        $('#loginAlert').show();
+    }
 </script>
